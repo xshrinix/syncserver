@@ -8,5 +8,5 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-ENTRYPOINT ["crossbar", "start", "--cbdir", "/mynode/.crossbar"]
+ENTRYPOINT ["crossbar", "start", "--cbdir", "/app/.crossbar"]
 # CMD ["helloworld.py"]
