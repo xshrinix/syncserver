@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "controller": {
+    "options": {
+      "title": "xmcontroller"
+    }
+  },
+  "workers": [
+    {
+      "type": "router",
+      "options": {
+        "pythonpath": [".."]
+      },
+      "realms": [
+        {
+          "name": "dss",
+          "roles": [
+            {
+              "name": "anonymous",
+              "permissions": [
+                {
+                  "uri": "",
+                  "match": "prefix",
+                  "allow": {
+                    "call": true,
+                    "register": true,
+                    "publish": true,
+                    "subscribe": true
+                  },
+                  "disclose": {
+                    "caller": false,
+                    "publisher": false
+                  },
+                  "cache": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "transports": [
+        {
+          "type": "websocket",
+          "endpoint": {
+            "type": "tcp",
+            "port": 8000
+          },
+          "options": {
+            "enable_webstatus": false,
+            "max_frame_size": 1048576,
+            "max_message_size": 1048576,
+            "auto_fragment_size": 65536,
+            "fail_by_drop": true,
+            "open_handshake_timeout": 20000,
+            "close_handshake_timeout": 3000,
+            "auto_ping_interval": 40000,
+            "auto_ping_timeout": 40000,
+            "auto_ping_size": 12
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "pid": 16867, 
+    "argv": [
+        "crossbar", 
+        "start"
+    ], 
+    "options": {
+        "debug_lifecycle": false, 
+        "debug_programflow": false, 
+        "command": "start", 
+        "color": "auto", 
+        "loglevel": "info", 
+        "logformat": "standard", 
+        "logdir": null, 
+        "logtofile": false, 
+        "cbdir": "/var/pydata/crossbarserver/.crossbar", 
+        "config": "config.json", 
+        "shutdownafter": null
+    }
+}
