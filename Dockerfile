@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install -r requirements.txt
-
+RUN chgrp -R 0 /app && chmod -R g=u /app
 EXPOSE 8000
 
 ENTRYPOINT ["crossbar", "start", "--cbdir", "/app/.crossbar"]
